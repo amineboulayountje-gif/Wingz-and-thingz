@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-base text-cream-50 font-body antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  ::selection {
+    @apply bg-primary-500/30 text-cream-50;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary-400 ring-offset-2 ring-offset-base;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary-500 px-6 py-3 font-display font-semibold text-white shadow-glow transition-all duration-200 hover:bg-primary-400 hover:shadow-glow active:scale-95 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-base-border bg-base-card px-6 py-3 font-display font-semibold text-cream-50 transition-all duration-200 hover:border-primary-500/50 hover:bg-base-hover active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 font-medium text-cream-300 transition-colors duration-200 hover:text-cream-50;
+  }
+
+  .card {
+    @apply rounded-2xl border border-base-border bg-base-card shadow-card transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply hover:border-primary-500/40 hover:shadow-elevated;
+  }
+
+  .input-field {
+    @apply rounded-xl border border-base-border bg-base-surface px-4 py-3 text-cream-50 placeholder-cream-500 transition-colors focus:border-primary-500;
+  }
+
+  .section-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-400 to-gold-400 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
