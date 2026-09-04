@@ -35,12 +35,13 @@ export function Header({ onNavigate }: HeaderProps) {
         <div className="flex h-16 items-center justify-between gap-4 lg:h-18">
           <button
             onClick={() => handleNav("top")}
-            className="flex items-center gap-2 font-display text-xl font-bold tracking-tight text-cream-50 transition-opacity hover:opacity-80"
+            className="flex items-center transition-opacity hover:opacity-80"
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary-500 text-sm font-bold text-white shadow-glow">
-              W
-            </span>
-            <span className="hidden sm:inline">Wingz &amp; Thingz</span>
+            <img
+              src="/logo.png"
+              alt="Wingz & Thingz"
+              className="h-10 w-auto object-contain"
+            />
           </button>
 
           <nav className="hidden items-center gap-1 md:flex">
@@ -50,12 +51,14 @@ export function Header({ onNavigate }: HeaderProps) {
             >
               {t.nav.howItWorks}
             </button>
+
             <button
               onClick={() => handleNav("menu")}
               className="btn-ghost text-sm"
             >
               {t.nav.menu}
             </button>
+
             <button
               onClick={() => handleNav("extras")}
               className="btn-ghost text-sm"
@@ -66,12 +69,14 @@ export function Header({ onNavigate }: HeaderProps) {
 
           <div className="flex items-center gap-2 sm:gap-3">
             <LanguageSwitcher variant="desktop" />
+
             <button
               onClick={() => handleNav("order")}
               className="btn-primary hidden px-5 py-2.5 text-sm lg:inline-flex"
             >
               {t.nav.cta}
             </button>
+
             <button
               onClick={() => setMobileOpen((v) => !v)}
               className="flex h-10 w-10 items-center justify-center rounded-xl border border-base-border bg-base-card text-cream-50 md:hidden"
@@ -93,21 +98,25 @@ export function Header({ onNavigate }: HeaderProps) {
             >
               {t.nav.howItWorks}
             </button>
+
             <button
               onClick={() => handleNav("menu")}
               className="rounded-xl px-4 py-3 text-left text-cream-100 hover:bg-base-hover"
             >
               {t.nav.menu}
             </button>
+
             <button
               onClick={() => handleNav("extras")}
               className="rounded-xl px-4 py-3 text-left text-cream-100 hover:bg-base-hover"
             >
               {t.nav.extras}
             </button>
+
             <div className="flex items-center justify-between px-4 py-3">
               <LanguageSwitcher variant="mobile" />
             </div>
+
             <button
               onClick={() => handleNav("order")}
               className="btn-primary mt-2 w-full"
