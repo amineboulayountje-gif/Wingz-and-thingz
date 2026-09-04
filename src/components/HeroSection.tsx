@@ -1,5 +1,5 @@
 import { useI18n } from "@/context/I18nContext";
-import { UtensilsCrossed, ArrowDown } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 interface HeroSectionProps {
   onStart: () => void;
@@ -19,11 +19,6 @@ export function HeroSection({ onStart, onHowItWorks }: HeroSectionProps) {
 
       <div className="section-container py-16 sm:py-20 lg:py-28">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
-          <div className="inline-flex items-center justify-center gap-2 rounded-full border border-base-border bg-base-card/60 px-4 py-2 text-sm font-medium text-cream-200 backdrop-blur">
-            <UtensilsCrossed size={14} className="text-primary-400" />
-            {t.footer.location} · {t.footer.tagline}
-          </div>
-
           <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-cream-50 sm:text-5xl lg:text-6xl">
             {t.hero.headline}
             <br />
@@ -38,6 +33,7 @@ export function HeroSection({ onStart, onHowItWorks }: HeroSectionProps) {
             <button onClick={onStart} className="btn-primary w-full sm:w-auto">
               {t.hero.ctaPrimary}
             </button>
+
             <button
               onClick={onHowItWorks}
               className="btn-secondary w-full sm:w-auto"
