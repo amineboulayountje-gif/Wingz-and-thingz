@@ -48,7 +48,7 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
         </div>
 
         {/* Occasions */}
-        <div className="mx-auto mt-16 max-w-4xl sm:mt-20">
+        <div className="mx-auto mt-8 max-w-4xl sm:mt-10">
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {occasions.map((occasion) => (
               <div
