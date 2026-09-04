@@ -1,4 +1,4 @@
-import { ArrowDown } from "lucide-react";
+import { useState } from "react";
 
 interface HeroSectionProps {
   onNavigate: (id: string) => void;
@@ -29,7 +29,6 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
       {/* Hero content */}
       <div className="section-container py-16 sm:py-20 lg:py-28">
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center">
-
           {/* Main headline */}
           <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-cream-50 sm:text-5xl lg:text-6xl">
             Jij regelt het feestje. Wij regelen de tafel.
@@ -39,24 +38,6 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
           <p className="max-w-xl text-base leading-relaxed text-cream-300 sm:text-lg">
             Meer tijd voor je gasten — wij zorgen voor een tafel vol lekkers.
           </p>
-
-          {/* CTA buttons */}
-          <div className="flex flex-col items-center gap-3 sm:flex-row">
-            <button
-              onClick={() => onNavigate("order")}
-              className="btn-primary w-full sm:w-auto"
-            >
-              Stel je tafel samen
-            </button>
-
-            <button
-              onClick={() => onNavigate("menu")}
-              className="btn-secondary w-full sm:w-auto"
-            >
-              <ArrowDown size={18} />
-              Bekijk het menu
-            </button>
-          </div>
         </div>
 
         {/* Perfect voor */}
