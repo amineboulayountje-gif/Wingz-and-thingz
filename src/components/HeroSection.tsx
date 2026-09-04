@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 interface HeroSectionProps {
   onNavigate: (id: string) => void;
 }
@@ -28,26 +26,29 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
 
       {/* Hero content */}
       <div className="section-container py-16 sm:py-20 lg:py-28">
-        <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center">
+        <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           {/* Main headline */}
-          <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-cream-50 sm:text-5xl lg:text-6xl">
-            Jij regelt het feestje. Wij regelen de tafel.
+          <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+            <span className="block text-cream-50">
+              Jij regelt het feestje.
+            </span>
+
+            <span
+              className="block"
+              style={{ color: "rgb(249, 115, 22)" }}
+            >
+              Wij regelen de tafel.
+            </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="max-w-xl text-base leading-relaxed text-cream-300 sm:text-lg">
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-cream-300 sm:text-lg">
             Meer tijd voor je gasten — wij zorgen voor een tafel vol lekkers.
           </p>
         </div>
 
-        {/* Perfect voor */}
+        {/* Occasions */}
         <div className="mx-auto mt-16 max-w-4xl sm:mt-20">
-          <div className="mb-6 text-center">
-            <h2 className="font-display text-2xl font-bold text-cream-50 sm:text-3xl">
-              Perfect voor
-            </h2>
-          </div>
-
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {occasions.map((occasion) => (
               <div
