@@ -6,10 +6,8 @@ import { HeroSection } from "@/components/HeroSection";
 import { OrderModeSelector } from "@/components/OrderModeSelector";
 import { CustomBuilder } from "@/components/CustomBuilder";
 import { PackageBuilder } from "@/components/PackageBuilder";
-import { ExtrasSection } from "@/components/ExtrasSection";
 import { OrderSummary } from "@/components/OrderSummary";
 import { MobileOrderBar } from "@/components/MobileOrderBar";
-import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { ConfirmationOverlay } from "@/components/ConfirmationOverlay";
 import { buildWhatsAppUrl } from "@/utils/order";
@@ -120,10 +118,8 @@ function AppContent() {
           </div>
         </section>
 
-        <ExtrasSection />
 
 
-        <Testimonials />
       </main>
 
       <Footer />
