@@ -4,7 +4,6 @@ import { OrderProvider, useOrder } from "@/context/OrderContext";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { ProblemSolution } from "@/components/ProblemSolution";
-import { HowItWorks } from "@/components/HowItWorks";
 import { OrderModeSelector } from "@/components/OrderModeSelector";
 import { CustomBuilder } from "@/components/CustomBuilder";
 import { PackageBuilder } from "@/components/PackageBuilder";
@@ -27,20 +26,32 @@ function AppContent() {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
+
     const el = document.getElementById(id);
+
     if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   }, []);
 
   const scrollToOrder = useCallback(() => {
     if (orderSectionRef.current) {
-      orderSectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      orderSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   }, []);
 
   const handleCheckout = useCallback(() => {
-    const url = buildWhatsAppUrl(order, document.documentElement.lang as "nl" | "en" | "fr");
+    const url = buildWhatsAppUrl(
+      order,
+      document.documentElement.lang as "nl" | "en" | "fr"
+    );
+
     window.open(url, "_blank", "noopener,noreferrer");
     setConfirmation(true);
   }, [order]);
@@ -48,6 +59,7 @@ function AppContent() {
   const handleNewOrder = useCallback(() => {
     resetOrder();
     setConfirmation(false);
+
     setTimeout(() => {
       scrollToOrder();
     }, 100);
@@ -60,13 +72,15 @@ function AppContent() {
       <Header onNavigate={scrollToSection} />
 
       <main>
-        <HeroSection onStart={scrollToOrder} onHowItWorks={() => scrollToSection("how-it-works")} />
+        <HeroSection onStart={scrollToOrder} />
 
         <ProblemSolution onStart={scrollToOrder} />
 
-        <HowItWorks />
-
-        <section id="order" ref={orderSectionRef} className="py-12 sm:py-16 lg:py-20">
+        <section
+          id="order"
+          ref={orderSectionRef}
+          className="py-12 sm:py-16 lg:py-20"
+        >
           <div className="section-container">
             <div id="menu" className="flex flex-col gap-8">
               <OrderModeSelector />
@@ -76,6 +90,7 @@ function AppContent() {
                   <div className="animate-fade-in">
                     <CustomBuilder />
                   </div>
+
                   <div className="hidden lg:block">
                     <div className="sticky top-24">
                       <OrderSummary onCheckout={handleCheckout} />
@@ -89,6 +104,7 @@ function AppContent() {
                   <div className="animate-fade-in">
                     <PackageBuilder />
                   </div>
+
                   <div className="hidden lg:block">
                     <div className="sticky top-24">
                       <OrderSummary onCheckout={handleCheckout} />
@@ -119,9 +135,13 @@ function AppContent() {
 
       <MobileOrderBar onCheckout={handleCheckout} />
 
-      <ConfirmationOverlay visible={confirmation} onNewOrder={handleNewOrder} />
+      <ConfirmationOverlay
+        visible={confirmation}
+        onNewOrder={handleNewOrder}
+      />
 
       {hasItems && <div className="h-16 lg:hidden" />}
+
       {confirmation && <div className="h-16 lg:hidden" />}
     </div>
   );
