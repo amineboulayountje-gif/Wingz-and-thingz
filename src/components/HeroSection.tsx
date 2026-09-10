@@ -1,8 +1,8 @@
 interface HeroSectionProps {
-  onNavigate: (id: string) => void;
+  onStart?: () => void;
 }
 
-export function HeroSection({ onNavigate }: HeroSectionProps) {
+export function HeroSection({ onStart }: HeroSectionProps) {
   const occasions = [
     "Verjaardagen",
     "Familiefeesten",
@@ -45,19 +45,23 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
           <p className="mt-6 max-w-xl text-base leading-relaxed text-cream-300 sm:text-lg">
             Meer tijd voor je gasten — wij zorgen voor een tafel vol lekkers.
           </p>
-        </div>
 
-        {/* Occasions */}
-        <div className="mx-auto mt-8 max-w-4xl sm:mt-10">
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-            {occasions.map((occasion) => (
-              <div
-                key={occasion}
-                className="rounded-full border border-base-border bg-base-card/60 px-4 py-2.5 text-sm font-medium text-cream-200 backdrop-blur-sm sm:px-5 sm:py-3"
-              >
-                {occasion}
-              </div>
-            ))}
+          {/* Occasions */}
+          <div className="mt-8 sm:mt-10">
+            <h2 className="mb-4 font-display text-lg font-semibold text-cream-50 sm:text-xl">
+              Perfect voor
+            </h2>
+
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+              {occasions.map((occasion) => (
+                <div
+                  key={occasion}
+                  className="rounded-full border border-base-border bg-base-card/60 px-4 py-2.5 text-sm font-medium text-cream-200 backdrop-blur-sm sm:px-5 sm:py-3"
+                >
+                  {occasion}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
