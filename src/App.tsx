@@ -9,7 +9,6 @@ import { PackageBuilder } from "@/components/PackageBuilder";
 import { ExtrasSection } from "@/components/ExtrasSection";
 import { OrderSummary } from "@/components/OrderSummary";
 import { MobileOrderBar } from "@/components/MobileOrderBar";
-import { Occasions } from "@/components/Occasions";
 import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { ConfirmationOverlay } from "@/components/ConfirmationOverlay";
@@ -123,7 +122,6 @@ function AppContent() {
 
         <ExtrasSection />
 
-        <Occasions />
 
         <Testimonials />
       </main>
