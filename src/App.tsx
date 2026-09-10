@@ -79,7 +79,7 @@ function AppContent() {
         <section
           id="order"
           ref={orderSectionRef}
-          className="py-12 sm:py-16 lg:py-20"
+          className="pt-4 pb-12 sm:pt-6 sm:pb-16 lg:pt-8 lg:pb-20"
         >
           <div className="section-container">
             <div id="menu" className="flex flex-col gap-8">
