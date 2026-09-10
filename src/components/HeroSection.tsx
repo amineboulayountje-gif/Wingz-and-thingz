@@ -1,16 +1,26 @@
+import {
+  Cake,
+  Users,
+  Home,
+  Baby,
+  Trees,
+  Sparkles,
+  PartyPopper,
+} from "lucide-react";
+
 interface HeroSectionProps {
   onStart?: () => void;
 }
 
 export function HeroSection({ onStart }: HeroSectionProps) {
   const occasions = [
-    "Verjaardagen",
-    "Familiefeesten",
-    "Housewarmings",
-    "Babyshowers",
-    "Tuinfeesten",
-    "Girls' nights",
-    "Friends gatherings",
+    { name: "Verjaardagen", icon: Cake },
+    { name: "Familiefeesten", icon: Users },
+    { name: "Housewarmings", icon: Home },
+    { name: "Babyshowers", icon: Baby },
+    { name: "Tuinfeesten", icon: Trees },
+    { name: "Girls' nights", icon: Sparkles },
+    { name: "Friends gatherings", icon: PartyPopper },
   ];
 
   return (
@@ -53,12 +63,13 @@ export function HeroSection({ onStart }: HeroSectionProps) {
             </h2>
 
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-              {occasions.map((occasion) => (
+              {occasions.map(({ name, icon: Icon }) => (
                 <div
-                  key={occasion}
-                  className="rounded-full border border-base-border bg-base-card/60 px-4 py-2.5 text-sm font-medium text-cream-200 backdrop-blur-sm sm:px-5 sm:py-3"
+                  key={name}
+                  className="flex items-center gap-2 rounded-full border border-base-border bg-base-card/60 px-4 py-2.5 text-sm font-medium text-cream-200 backdrop-blur-sm sm:px-5 sm:py-3"
                 >
-                  {occasion}
+                  <Icon size={16} className="text-primary-400" />
+                  <span>{name}</span>
                 </div>
               ))}
             </div>
