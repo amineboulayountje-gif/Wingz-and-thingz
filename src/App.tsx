@@ -3,7 +3,6 @@ import { I18nProvider } from "@/context/I18nContext";
 import { OrderProvider, useOrder } from "@/context/OrderContext";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
-import { ProblemSolution } from "@/components/ProblemSolution";
 import { OrderModeSelector } from "@/components/OrderModeSelector";
 import { CustomBuilder } from "@/components/CustomBuilder";
 import { PackageBuilder } from "@/components/PackageBuilder";
@@ -73,8 +72,6 @@ function AppContent() {
 
       <main>
         <HeroSection onStart={scrollToOrder} />
-
-        <ProblemSolution onStart={scrollToOrder} />
 
         <section
           id="order"
