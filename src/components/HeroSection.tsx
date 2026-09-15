@@ -1,26 +1,8 @@
-import { useCallback } from "react";
-
 interface HeroSectionProps {
   onStart?: () => void;
 }
 
 export function HeroSection({ onStart }: HeroSectionProps) {
-  const scrollToOrder = useCallback(() => {
-    if (onStart) {
-      onStart();
-      return;
-    }
-
-    const element = document.getElementById("order");
-
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  }, [onStart]);
-
   const foodImages = [
     {
       src: "https://images.unsplash.com/photo-1608039755401-742074f0548d?w=900&q=80",
@@ -82,17 +64,6 @@ export function HeroSection({ onStart }: HeroSectionProps) {
           <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-cream-300 sm:text-lg">
             Meer tijd voor je gasten — wij zorgen voor een tafel vol lekkers.
           </p>
-
-          {/* Primary CTA */}
-          <div className="mt-7 sm:mt-8">
-            <button
-              type="button"
-              onClick={scrollToOrder}
-              className="btn-primary w-full sm:w-auto"
-            >
-              Stel je tafel samen
-            </button>
-          </div>
         </div>
       </div>
     </section>
