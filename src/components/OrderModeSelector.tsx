@@ -12,14 +12,34 @@ export function OrderModeSelector() {
       icon: SlidersHorizontal,
       title: t.orderMode.customTitle,
       desc: t.orderMode.customDesc,
+      targetId: "custom-builder",
     },
     {
       id: "package" as const,
       icon: Package,
       title: t.orderMode.packageTitle,
       desc: t.orderMode.packageDesc,
+      targetId: "package-builder",
     },
   ];
+
+  const handleModeChange = (
+    mode: "custom" | "package",
+    targetId: string
+  ) => {
+    setMode(mode);
+
+    window.setTimeout(() => {
+      const element = document.getElementById(targetId);
+
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 150);
+  };
 
   return (
     <div className="flex flex-col gap-4">
@@ -36,14 +56,13 @@ export function OrderModeSelector() {
             <button
               key={mode.id}
               type="button"
-              onClick={() => setMode(mode.id)}
+              onClick={() => handleModeChange(mode.id, mode.targetId)}
               className={`group flex min-h-[78px] w-full items-center gap-4 rounded-2xl border px-4 py-3.5 text-left transition-all duration-200 sm:min-h-[84px] sm:px-5 ${
                 isActive
                   ? "border-primary-500 bg-primary-500/10"
                   : "border-base-border bg-base-card hover:border-primary-500/40 hover:bg-base-hover"
               }`}
             >
-              {/* Icon */}
               <div
                 className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors ${
                   isActive
@@ -54,7 +73,6 @@ export function OrderModeSelector() {
                 <Icon size={19} strokeWidth={1.8} />
               </div>
 
-              {/* Text */}
               <div className="min-w-0 flex-1">
                 <h3 className="font-display text-base font-semibold leading-tight text-cream-50 sm:text-lg">
                   {mode.title}
@@ -65,7 +83,6 @@ export function OrderModeSelector() {
                 </p>
               </div>
 
-              {/* Arrow */}
               <ArrowRight
                 size={19}
                 strokeWidth={1.8}
