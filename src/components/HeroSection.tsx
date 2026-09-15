@@ -23,6 +23,21 @@ export function HeroSection({ onStart }: HeroSectionProps) {
     { name: "Friends gatherings", icon: PartyPopper },
   ];
 
+  const foodImages = [
+    {
+      src: "https://images.unsplash.com/photo-1608039755401-742074f0548d?w=900&q=80",
+      alt: "Chicken wings",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=900&q=80",
+      alt: "Food table",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=900&q=80",
+      alt: "Food and drinks",
+    },
+  ];
+
   return (
     <section id="top" className="relative overflow-hidden pt-16 lg:pt-18">
       {/* Background */}
@@ -36,7 +51,7 @@ export function HeroSection({ onStart }: HeroSectionProps) {
 
       {/* Hero content */}
       <div className="section-container py-16 sm:py-20 lg:py-28">
-        <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+        <div className="mx-auto max-w-5xl text-center">
           {/* Main headline */}
           <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
             <span className="block text-cream-50">
@@ -51,8 +66,19 @@ export function HeroSection({ onStart }: HeroSectionProps) {
             </span>
           </h1>
 
+          {/* Food image strip */}
+          <div className="hero-food-strip">
+            {foodImages.map((image) => (
+              <img
+                key={image.src}
+                src={image.src}
+                alt={image.alt}
+              />
+            ))}
+          </div>
+
           {/* Subtitle */}
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-cream-300 sm:text-lg">
+          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-cream-300 sm:text-lg">
             Meer tijd voor je gasten — wij zorgen voor een tafel vol lekkers.
           </p>
 
