@@ -1,15 +1,23 @@
 import { useEffect, useRef, useState } from "react";
+import {
+  Cake,
+  Users,
+  Home,
+  Baby,
+  Trees,
+  Sparkles,
+} from "lucide-react";
 
 const occasionsTop = [
-  "Verjaardagen",
-  "Housewarmings",
-  "Tuinfeesten",
+  { name: "Verjaardagen", icon: Cake },
+  { name: "Housewarmings", icon: Home },
+  { name: "Tuinfeesten", icon: Trees },
 ];
 
 const occasionsBottom = [
-  "Familiefeesten",
-  "Babyshowers",
-  "Girls' nights",
+  { name: "Familiefeesten", icon: Users },
+  { name: "Babyshowers", icon: Baby },
+  { name: "Girls' nights", icon: Sparkles },
 ];
 
 const foodImages = [
@@ -31,15 +39,20 @@ const foodImages = [
   },
 ];
 
-function OccasionChips({ items }: { items: string[] }) {
+function OccasionChips({
+  items,
+}: {
+  items: { name: string; icon: React.ElementType }[];
+}) {
   return (
     <div className="flex flex-wrap gap-2">
-      {items.map((occasion) => (
+      {items.map(({ name, icon: Icon }) => (
         <span
-          key={occasion}
-          className="rounded-full border border-base-border bg-base-card/70 px-4 py-2 text-sm font-medium text-cream-200 backdrop-blur-sm"
+          key={name}
+          className="flex items-center gap-2 rounded-full border border-base-border bg-base-card/70 px-4 py-2 text-sm font-medium text-cream-200 backdrop-blur-sm"
         >
-          {occasion}
+          <Icon size={15} className="text-primary-400" />
+          <span>{name}</span>
         </span>
       ))}
     </div>
