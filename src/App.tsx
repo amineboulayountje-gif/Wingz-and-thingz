@@ -8,6 +8,7 @@ import { CustomBuilder } from "@/components/CustomBuilder";
 import { PackageBuilder } from "@/components/PackageBuilder";
 import { OrderSummary } from "@/components/OrderSummary";
 import { MobileOrderBar } from "@/components/MobileOrderBar";
+import { InspirationSection } from "@/components/InspirationSection";
 import { Footer } from "@/components/Footer";
 import { ConfirmationOverlay } from "@/components/ConfirmationOverlay";
 import { buildWhatsAppUrl } from "@/utils/order";
@@ -118,8 +119,7 @@ function AppContent() {
           </div>
         </section>
 
-
-
+        <InspirationSection />
       </main>
 
       <Footer />
