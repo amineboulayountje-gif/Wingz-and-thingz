@@ -82,7 +82,10 @@ function AppContent() {
 
               {order.mode === "custom" && (
                 <div className="grid gap-8 lg:grid-cols-[1fr_340px] lg:gap-8">
-                  <div className="animate-fade-in">
+                  <div
+                    id="custom-builder"
+                    className="animate-fade-in scroll-mt-6"
+                  >
                     <CustomBuilder />
                   </div>
 
@@ -96,7 +99,10 @@ function AppContent() {
 
               {order.mode === "package" && (
                 <div className="grid gap-8 lg:grid-cols-[1fr_340px] lg:gap-8">
-                  <div className="animate-fade-in">
+                  <div
+                    id="package-builder"
+                    className="animate-fade-in scroll-mt-6"
+                  >
                     <PackageBuilder />
                   </div>
 
