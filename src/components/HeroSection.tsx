@@ -1,27 +1,25 @@
-import {
-  Cake,
-  Users,
-  Home,
-  Baby,
-  Trees,
-  Sparkles,
-  PartyPopper,
-} from "lucide-react";
+import { useCallback } from "react";
 
 interface HeroSectionProps {
   onStart?: () => void;
 }
 
 export function HeroSection({ onStart }: HeroSectionProps) {
-  const occasions = [
-    { name: "Verjaardagen", icon: Cake },
-    { name: "Familiefeesten", icon: Users },
-    { name: "Housewarmings", icon: Home },
-    { name: "Babyshowers", icon: Baby },
-    { name: "Tuinfeesten", icon: Trees },
-    { name: "Girls' nights", icon: Sparkles },
-    { name: "Friends gatherings", icon: PartyPopper },
-  ];
+  const scrollToOrder = useCallback(() => {
+    if (onStart) {
+      onStart();
+      return;
+    }
+
+    const element = document.getElementById("order");
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [onStart]);
 
   const foodImages = [
     {
@@ -39,7 +37,10 @@ export function HeroSection({ onStart }: HeroSectionProps) {
   ];
 
   return (
-    <section id="top" className="relative overflow-hidden pt-16 lg:pt-18">
+    <section
+      id="top"
+      className="relative overflow-hidden pt-16 lg:pt-18"
+    >
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-base via-base to-base-surface" />
@@ -50,7 +51,7 @@ export function HeroSection({ onStart }: HeroSectionProps) {
       </div>
 
       {/* Hero content */}
-      <div className="section-container py-16 sm:py-20 lg:py-28">
+      <div className="section-container py-12 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-5xl text-center">
           {/* Main headline */}
           <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
@@ -82,23 +83,15 @@ export function HeroSection({ onStart }: HeroSectionProps) {
             Meer tijd voor je gasten — wij zorgen voor een tafel vol lekkers.
           </p>
 
-          {/* Occasions */}
-          <div className="mt-8 sm:mt-10">
-            <h2 className="mb-4 font-display text-lg font-semibold text-cream-50 sm:text-xl">
-              Perfect voor
-            </h2>
-
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-              {occasions.map(({ name, icon: Icon }) => (
-                <div
-                  key={name}
-                  className="flex items-center gap-2 rounded-full border border-base-border bg-base-card/60 px-4 py-2.5 text-sm font-medium text-cream-200 backdrop-blur-sm sm:px-5 sm:py-3"
-                >
-                  <Icon size={16} className="text-primary-400" />
-                  <span>{name}</span>
-                </div>
-              ))}
-            </div>
+          {/* Primary CTA */}
+          <div className="mt-7 sm:mt-8">
+            <button
+              type="button"
+              onClick={scrollToOrder}
+              className="btn-primary w-full sm:w-auto"
+            >
+              Stel je tafel samen
+            </button>
           </div>
         </div>
       </div>
