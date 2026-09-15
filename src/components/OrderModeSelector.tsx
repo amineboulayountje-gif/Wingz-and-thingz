@@ -33,9 +33,13 @@ export function OrderModeSelector() {
       const element = document.getElementById(targetId);
 
       if (element) {
-        element.scrollIntoView({
+        const offset = 120;
+        const elementPosition =
+          element.getBoundingClientRect().top + window.scrollY;
+
+        window.scrollTo({
+          top: elementPosition - offset,
           behavior: "smooth",
-          block: "start",
         });
       }
     }, 150);
