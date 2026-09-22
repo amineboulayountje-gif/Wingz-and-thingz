@@ -3,9 +3,9 @@ import type { Product } from "@/types";
 export const siteConfig = {
   brand: "Wingz & Thingz",
   city: "Antwerpen",
-  whatsappNumber: "32470000000",
-  instagramUrl: "https://instagram.com/wingzandthingz",
-  email: "hello@wingzandthingz.be",
+  whatsappNumber: "32483691967",
+  instagramUrl: "https://instagram.com/wingzandthingz.antwerp",
+  email: "wingzandthingz@hotmail.com",
   minGuests: 6,
   maxGuests: 100,
   defaultGuests: 10,
