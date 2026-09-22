@@ -42,29 +42,7 @@ export function Header({ onNavigate }: HeaderProps) {
               alt="Wingz & Thingz"
               className="h-10 w-auto object-contain"
             />
-          </button>
-
-          <nav className="hidden items-center gap-1 md:flex">
-            <button
-              onClick={() => handleNav("how-it-works")}
-              className="btn-ghost text-sm"
-            >
-              {t.nav.howItWorks}
-            </button>
-
-            <button
-              onClick={() => handleNav("menu")}
-              className="btn-ghost text-sm"
-            >
-              {t.nav.menu}
-            </button>
-
-            <button
-              onClick={() => handleNav("extras")}
-              className="btn-ghost text-sm"
-            >
-              {t.nav.extras}
-            </button>
+         
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-3">
