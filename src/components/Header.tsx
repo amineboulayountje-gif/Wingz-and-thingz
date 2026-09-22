@@ -1,3 +1,4 @@
+```tsx
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useI18n } from "@/context/I18nContext";
@@ -42,8 +43,7 @@ export function Header({ onNavigate }: HeaderProps) {
               alt="Wingz & Thingz"
               className="h-10 w-auto object-contain"
             />
-         
-          </nav>
+          </button>
 
           <div className="flex items-center gap-2 sm:gap-3">
             <LanguageSwitcher variant="desktop" />
@@ -107,3 +107,6 @@ export function Header({ onNavigate }: HeaderProps) {
     </header>
   );
 }
+```
+
+Replace the entire contents of `src/components/Heade
