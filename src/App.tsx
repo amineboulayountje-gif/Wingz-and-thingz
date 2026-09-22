@@ -74,10 +74,10 @@ function AppContent() {
         <section
           id="order"
           ref={orderSectionRef}
-          className="pt-4 pb-12 sm:pt-6 sm:pb-16 lg:pt-8 lg:pb-20"
+          className="pt-0 pb-12 sm:pb-16 lg:pb-20"
         >
           <div className="section-container">
-            <div id="menu" className="flex flex-col gap-8">
+            <div id="menu" className="flex flex-col gap-6">
               <OrderModeSelector />
 
               {order.mode === "custom" && (
